@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>secret qr portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            border: 1px solid #334155;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #3b82f6;
+        }
+
+        .rickroll-text {
+            color: #ef4444;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .discord-link {
+            display: block;
+            margin-top: 2rem;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .discord-link:hover {
+            color: #5865f2;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="pre-april">
+            <h1>I told you to scan it tomorrow, not today.</h1>
+        </div>
+
+        <div id="april-fools" class="hidden">
+            <img src="https://media.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif" alt="Rick Astley">
+            <h1 class="rickroll-text">GET RICKROLLED ON APRIL FIRST HAR HAR HAR</h1>
+            <a href="https://discord.gg/8mRBvws83F" class="discord-link">https://discord.gg/8mRBvws83F</a>
+        </div>
+    </div>
+
+    <script>
+        function checkDate() {
+            const now = new Date();
+            const month = now.getMonth(); // 0 is January, 3 is April
+            const day = now.getDate();
+
+            const preAprilDiv = document.getElementById('pre-april');
+            const aprilFoolsDiv = document.getElementById('april-fools');
+
+            // If month is April (3) or later
+            if (month >= 3) {
+                preAprilDiv.classList.add('hidden');
+                aprilFoolsDiv.classList.remove('hidden');
+            }
+        }
+
+        checkDate();
+    </script>
+</body>
+</html>
